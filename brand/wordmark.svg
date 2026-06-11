@@ -1,7 +1,6 @@
 <svg width="83" height="24" viewBox="0 0 83 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    svg { color: #2A272C; }
-    @media (prefers-color-scheme: dark) { svg { color: #FAFAF9; } }
+    svg { color: #6366F1; }
   </style>
   <path d="M4.73073 0H0V21.7498L2.59613 23.9998H6.46148V19.6729H4.73073V0Z" fill="currentColor"/>
   <path fill-rule="evenodd" clip-rule="evenodd" d="M22.9604 6.05762L25.2104 8.36529V21.6921L22.9604 23.9998H11.249L8.82593 21.6921V8.48067L11.249 6.05762H22.9604ZM13.5428 10.7747L13.5562 19.6215L17.0759 19.6152H20.486L20.4726 10.7685L13.5428 10.7747Z" fill="currentColor"/>
