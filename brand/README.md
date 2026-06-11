@@ -11,32 +11,31 @@ Canonical brand files. Source of truth: this directory. Every other use (docs si
 | [`logomark.svg`](./logomark.svg)             | Full lockup: symbol + word (primary lockup, README hero, site logo) | 114×24, scales |
 | [`social-preview.png`](./social-preview.png) | GitHub repo Social Preview (1280×640)                               | —              |
 
-## One file, both themes
+## One file, all surfaces
 
-Each SVG carries its own contrast logic. The mark is drawn with `fill="currentColor"` and the SVG ships an inline `<style>` block that sets `color` based on `prefers-color-scheme`:
+Each SVG carries a single contrast-safe ink. The mark is drawn with `fill="currentColor"` and the SVG ships an inline `<style>` block that sets `color` to one value that stays legible on both light and dark backgrounds:
 
 ```svg
 <style>
-  svg { color: #2A272C; }                                  /* light: ink */
-  @media (prefers-color-scheme: dark) { svg { color: #FAFAF9; } }
+  svg { color: #6366F1; } /* cross-surface ink */
 </style>
 ```
 
-This means a single file works everywhere:
+This means a single file works everywhere, including surfaces where background and OS theme do not match:
 
-- **`<img src="...">`** in READMEs — browsers (GitHub, npm) honor `prefers-color-scheme` inside the SVG document, so the mark flips on dark mode automatically.
-- **Inline SVG / Starlight theming** — outside CSS (`.starlight svg { color: ... }`) overrides the inline rule because CSS specificity favors the consuming document, so the host theme wins.
-- **Favicons** — modern browsers apply the same media query when rendering the tab icon.
+- **`<img src="...">`** in READMEs — npm and GitHub both render a readable mark regardless of the viewer's OS theme.
+- **Inline SVG / Starlight theming** — outside CSS (`.starlight svg { color: ... }`) can still override the inline rule when a surface needs a custom tint.
+- **Favicons** — modern browsers render the same stable ink color.
 
 We scope the rule to `svg` (rather than `:root`) so that if someone inlines the SVG into HTML the rule doesn't leak onto the host page's `color`. No `*-light.svg` / `*-mono.svg` companions. No `<picture>` markup. One file, one URL.
 
 ## Color tokens
 
-| Token                 | Hex       | Use                                                         |
-| --------------------- | --------- | ----------------------------------------------------------- |
-| `brand.ink`           | `#2A272C` | Default mark color. Body-text adjacent — readable on white. |
-| `brand.surface-light` | `#FFFFFF` | Mark on white.                                              |
-| `brand.surface-dark`  | `#0F0E10` | Mark inverted on dark — paired with `#FAFAF9` ink.          |
+| Token                 | Hex       | Use                                                                              |
+| --------------------- | --------- | -------------------------------------------------------------------------------- |
+| `brand.ink`           | `#6366F1` | Default mark color. Meets contrast targets on both `#FFFFFF` and `#0F0E10`.     |
+| `brand.surface-light` | `#FFFFFF` | Reference light surface.                                                         |
+| `brand.surface-dark`  | `#0F0E10` | Reference dark surface.                                                          |
 
 For accents and palette extension, defer to the docs site stylesheet (`docs/src/styles/custom.css`).
 
@@ -49,7 +48,7 @@ Minimum padding around the mark = the height of the **bullet** (the small square
 - ✅ Scale uniformly (SVG handles this).
 - ✅ Use the icon with type in your own UI — just respect clearspace.
 - ✅ Override the inline color via consuming CSS when you need a non-default tint.
-- ❌ Don't strip the `<style>` block — it's what makes adaptive contrast work.
+- ❌ Don't strip the `<style>` block — it's what keeps the canonical ink token embedded.
 - ❌ Don't stretch non-uniformly.
 - ❌ Don't add drop-shadows, glows, or borders. The mark is intentionally flat.
 
