@@ -1,37 +1,37 @@
+<h1 align="center">Zanaat</h1>
+
 <p align="center">
-  <a href="https://github.com/loncadev/lonca">
-    <img src="https://raw.githubusercontent.com/loncadev/.github/main/brand/logomark.svg" height="56" alt="Lonca">
-  </a>
+  <strong>A small workshop of open-source developer tools.</strong><br>
+  Açık kaynak geliştirici araçları atölyesi.
 </p>
 
 <p align="center">
-  <strong>Open-source SDKs and tooling for Turkish e-commerce marketplace integrations.</strong>
-</p>
-
-<p align="center">
-  Trendyol&nbsp;·&nbsp;Hepsiburada&nbsp;·&nbsp;n11&nbsp;— one typed, well-documented interface.
+  <a href="https://zanaat.dev">zanaat.dev</a>&nbsp;·&nbsp;<a href="mailto:hello@zanaat.dev">hello@zanaat.dev</a>
 </p>
 
 ---
 
-Integrating with Turkish marketplaces means wrestling with inconsistent APIs,
-sparse English docs, and per-platform quirks. Lonca gives you a single, typed
-SDK layer instead — so you can ship features instead of reverse-engineering APIs.
-
 ## Projects
 
-- **[lonca](https://github.com/loncadev/lonca)** — TypeScript SDK collection for
-  Turkish marketplaces: products, orders, inventory, and webhooks.
+<a href="https://github.com/zanaat-dev/lonca">
+  <img src="https://raw.githubusercontent.com/zanaat-dev/.github/main/brand/logomark.svg" height="28" alt="Lonca">
+</a>
+
+**[Lonca](https://github.com/zanaat-dev/lonca)** is a set of type-safe TypeScript SDKs for Turkish
+e-commerce marketplaces: Trendyol and Hepsiburada, with n11 on the way. It gives you one typed
+interface for products, orders, inventory and webhooks, so you can ship features instead of
+reverse-engineering marketplace APIs.
+[Docs](https://zanaat.dev/lonca) · [npm](https://www.npmjs.com/org/lonca)
+
+**[Baron](https://github.com/zanaat-dev/baron)** does platform-agnostic work orchestration for AI
+coding agents. It gives you one pane of glass for issues, source control, CI, deploys and
+notifications across providers, via MCP and a CLI.
 
 ## Contributing
 
-We build in the open and welcome contributions of every size — bug reports, docs,
-and pull requests. Start with the
-[contributing guide](https://github.com/loncadev/lonca/blob/main/CONTRIBUTING.md)
-and the [code of conduct](https://github.com/loncadev/lonca/blob/main/CODE_OF_CONDUCT.md).
-Found a vulnerability? See the
-[security policy](https://github.com/loncadev/lonca/blob/main/SECURITY.md).
-
-## License
-
-Released under the [MIT License](https://github.com/loncadev/lonca/blob/main/LICENSE).
+We build in the open and welcome contributions of every size: bug reports, docs and pull requests.
+Each project has its own contributing guide. For Lonca, start with the
+[contributing guide](https://github.com/zanaat-dev/lonca/blob/main/CONTRIBUTING.md) and the
+[code of conduct](https://github.com/zanaat-dev/lonca/blob/main/CODE_OF_CONDUCT.md).
+To report a vulnerability, use the project's private vulnerability reporting (see its
+[security policy](https://github.com/zanaat-dev/lonca/blob/main/SECURITY.md)).
