@@ -1,6 +1,7 @@
-# Lonca brand assets
+# Lonca brand assets (legacy copy)
 
-Canonical brand files. Source of truth: this directory. Every other use (docs site, READMEs, package metadata) references files from here.
+> [!IMPORTANT]
+> The canonical Lonca brand files moved to [`zanaat-dev/lonca/brand`](https://github.com/zanaat-dev/lonca/tree/main/brand). Edit them there. The copies here stay unchanged because READMEs already published to npm load them by URL; do not delete or rename them.
 
 ## Files
 
